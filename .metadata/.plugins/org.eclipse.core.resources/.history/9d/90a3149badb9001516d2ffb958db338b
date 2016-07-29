@@ -1,0 +1,98 @@
+#pragma once
+
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <cmath>            /* for atan2 and sqrt */
+#include "ics46goody.hpp"
+#include "ics_exceptions.hpp"
+#include "array_queue.hpp"
+#include "array_priority_queue.hpp"
+#include "array_map.hpp"
+
+
+class Point {
+public:
+  Point() : x(0), y(0) {} // Needed for pair
+  Point(int x_val, int y_val) : x(x_val), y(y_val) {}
+  friend bool operator == (const Point& p1, const Point& p2) {
+    return p1.x == p2.x && p1.y == p2.y;
+  }
+  friend std::ostream& operator << (std::ostream& outs, const Point& p) {
+    outs << "(" << p.x << "," << p.y << ")";
+    return outs;
+  }
+  int x;
+  int y;
+};
+
+
+//Helper Functions (you decide what is useful)
+//Hint: I used helpers for sort_xys, sort_angle, points, and first_quad
+
+
+
+//Problem #1a and #1b
+template<class KEY,class T>
+void swap (ics::ArrayMap<KEY,T>& m, KEY key1, KEY key2) {
+	m.put(key2,m.put*key1,m[key2]);
+	//T value = m[key1];
+	//m[key1] = m[key2];
+	//m[key2] =value;
+
+}
+
+
+template<class KEY,class T>
+void values_set_to_queue (const ics::ArrayMap<KEY,ics::ArraySet<T>>& m1,
+                          ics::ArrayMap<KEY,ics::ArrayQueue<T>>&     m2) {
+	for(auto kv: m1){
+		ics::ArrayQueue<std::string> empty;
+		empty.enqueue_all(kv.second);
+		m2[kv.first] = empty;
+	}
+}
+
+
+////Problem #2a, #2b, #2c, and #2d
+//ics::ArrayQueue<ics::pair<int,Point>> sort_xys (const ics::ArrayMap<int,Point>& m) {
+////Write code here
+//}
+//
+//
+//ics::ArrayQueue<Point> sort_angle (const ics::ArrayMap<int,Point>& m) {
+////Write code here
+//}
+//
+//
+//ics::ArrayQueue<Point> points (const ics::ArrayMap<int,Point>& m) {
+////Write code here
+//}
+//
+//
+//ics::ArrayMap<Point,double> first_quad (const ics::ArrayMap<int,Point>& m) {
+////Write code here
+//}
+//
+//
+////Problem #3
+//ics::ArrayMap<char,ics::ArraySet<char>> near(const std::string word, int dist) {
+////Write code here
+//}
+//
+//
+//Problem #4a and #4b
+ics::ArrayMap<std::string,int> got_called(const ics::ArrayMap<std::string,ics::ArrayMap<std::string,int>>& calls) {
+	ics::ArrayMap<std::string, int> newMap;
+	for (auto k: calls){
+		for (auto v:k.second){
+			newMap[v.first] += v.second;
+			}
+	}
+	return newMap;
+}
+//
+//
+//  ics::ArrayMap<std::string,ics::ArrayMap<std::string,int>> invert (const ics::ArrayMap<std::string,ics::ArrayMap<std::string,int>>& calls) {
+////Write code here
+//}

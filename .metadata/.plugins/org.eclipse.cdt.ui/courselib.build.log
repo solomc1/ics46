@@ -1,0 +1,11 @@
+21:21:47 **** Incremental Build of configuration Debug for project courselib ****
+make all 
+Building file: ../ics46-templates/googletestlib/src/gtest-all.cc
+Invoking: GCC C++ Compiler
+/usr/local/bin/g++-5 -std=c++11 -O0 -g3 -gdwarf-3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ics46-templates/googletestlib/src/gtest-all.d" -MT"ics46-templates/googletestlib/src/gtest-all.o" -o "ics46-templates/googletestlib/src/gtest-all.o" "../ics46-templates/googletestlib/src/gtest-all.cc"
+../ics46-templates/googletestlib/src/gtest-all.cc:39:25: fatal error: gtest/gtest.h: No such file or directory
+compilation terminated.
+make: *** [ics46-templates/googletestlib/src/gtest-all.o] Error 1
+
+21:21:47 Build Finished (took 155ms)
+

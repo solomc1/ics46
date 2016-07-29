@@ -1,0 +1,29 @@
+21:12:32 **** Incremental Build of configuration Debug for project project1 ****
+make all 
+Building file: ../src/runoffvoting.cpp
+Invoking: GCC C++ Compiler
+/usr/local/bin/g++-5 -std=c++11 -I"/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src" -I"/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/googletestlib/include" -O0 -g3 -gdwarf-3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/runoffvoting.d" -MT"src/runoffvoting.o" -o "src/runoffvoting.o" "../src/runoffvoting.cpp"
+../src/runoffvoting.cpp: In function 'Preferences read_voter_preferences(std::ifstream&)':
+../src/runoffvoting.cpp:56:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 1; i < chars.size(); i++){
+                    ^
+In file included from ../src/runoffvoting.cpp:14:0:
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_priority_queue.hpp: In instantiation of 'ics::ArrayPriorityQueue<T, tgt>::ArrayPriorityQueue(bool (*)(const T&, const T&)) [with T = ics::pair<std::__cxx11::basic_string<char>, ics::ArrayQueue<std::__cxx11::basic_string<char> > >; bool (* tgt)(const T&, const T&) = gt_alphabetic]':
+../src/runoffvoting.cpp:70:21:   required from here
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_priority_queue.hpp:129:10: warning: the address of 'bool gt_alphabetic(const PreferencesEntry&, const PreferencesEntry&)' will never be NULL [-Waddress]
+ : gt(tgt != nullptr ? tgt : cgt) {
+          ^
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_priority_queue.hpp:132:11: warning: the address of 'bool gt_alphabetic(const PreferencesEntry&, const PreferencesEntry&)' will never be NULL [-Waddress]
+   if (tgt != nullptr && cgt != nullptr && tgt != cgt)
+           ^
+In file included from ../src/runoffvoting.cpp:16:0:
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_map.hpp: In instantiation of 'int ics::ArrayMap<KEY, T>::put_all(const Iterable&) [with Iterable = ics::ArraySet<std::__cxx11::basic_string<char> >; KEY = std::__cxx11::basic_string<char>; T = int]':
+../src/runoffvoting.cpp:100:23:   required from here
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_map.hpp:263:8: error: 'class std::__cxx11::basic_string<char>' has no member named 'first'
+     put(m_entry.first, m_entry.second);
+        ^
+/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/src/array_map.hpp:263:8: error: 'class std::__cxx11::basic_string<char>' has no member named 'second'
+make: *** [src/runoffvoting.o] Error 1
+
+21:12:34 Build Finished (took 2s.403ms)
+

@@ -1,0 +1,11 @@
+21:29:53 **** Incremental Build of configuration Debug for project q1helper ****
+make all 
+Building target: q1helper
+Invoking: MacOS X C++ Linker
+/usr/local/bin/g++-5 -L"/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/courselib/Debug" -L"/Users/Solomon/Dropbox/WINTER 2016/ICS 46 workspace/googletestlib/Debug" -o "q1helper"  ./src/driver_quiz1.o ./src/test_quiz1.o   -lcourselib -lgoogletestlib
+ld: library not found for -lcourselib
+collect2: error: ld returned 1 exit status
+make: *** [q1helper] Error 1
+
+21:29:53 Build Finished (took 103ms)
+
